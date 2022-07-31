@@ -1,0 +1,17 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BookAuthorPublisherMVC.Models
+{
+    public class Publisher
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "Name is required")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "Name must be between 2 and 50 characters.")]
+        public string Name { get; set; }
+
+        //Relationship
+        public List<Book> Books { get; set; }
+    }
+}
